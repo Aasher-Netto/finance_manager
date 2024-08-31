@@ -10,7 +10,7 @@ class TestCategoriesModule(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        # Optional: Setup a fresh database or clean the categories table
+        # Setup a fresh database or clean the categories table
         pass
 
     def setUp(self):
@@ -55,7 +55,7 @@ class TestCategoriesModule(unittest.TestCase):
 
     @classmethod
     def tearDownClass(cls):
-        # Optional: Clean up the database after tests
+        # Clean up the database after tests
         pass
 
 if __name__ == '__main__':

@@ -7,7 +7,6 @@ from auth import register_user, login_user
 class TestAuthModule(unittest.TestCase):
 
     def test_register_user(self):
-        # Test case for registering a new user
         result = register_user("test_user", "password123")
         if result == "Error: Username already exists.":
            self.assertEqual(result, "Error: Username already exists.")

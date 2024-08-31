@@ -12,17 +12,16 @@ from main import backup_database, restore_database
 
 class TestBackupRestore(unittest.TestCase):
     def setUp(self):
-        self.db_path = 'test_finance_manager.db'  # Test database path
+        self.db_path = 'test_finance_manager.db'  
         self.backup_dir = 'test_backups'
         self.backup_file = os.path.join(self.backup_dir, 'test_backup.db')
 
-        # Ensure the test environment is clean
         if os.path.exists(self.db_path):
             os.remove(self.db_path)
         if os.path.exists(self.backup_file):
             os.remove(self.backup_file)
 
-        conn = get_db_connection(self.db_path)  # Now this should work correctly
+        conn = get_db_connection(self.db_path) 
         conn.execute('CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT UNIQUE, password TEXT)')
         conn.execute('INSERT INTO users (username, password) VALUES (?, ?)', ('test_user', 'test_pass'))
         conn.commit()
